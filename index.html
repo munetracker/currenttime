@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <title>Current Time</title>
+    <style>
+      body {
+        background: #111111;
+      }
+      .clock {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          color: #86f287;
+          font-size: 60px;
+          font-family: Orbitron;
+          letter-spacing: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myDIV">
+      <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    </div>
+
+    <div 
+      style="display: none;"
+      id="myDIV2">
+      <div id="MyClockDisplay2" class="clock" onload="showTime()"></div>
+    </div>
+
+    <button onclick="myFunction()">Click Me</button>
+
+    <script>
+      function showTime(){
+        var date = new Date();
+        var h = date.getHours(); // 0 - 23
+        var m = date.getMinutes(); // 0 - 59
+        var s = date.getSeconds(); // 0 - 59
+        var session = "AM";
+        
+        if(h == 0){
+            h = 12;
+        }
+        
+        if(h > 12){
+            h = h - 12;
+            session = "PM";
+        }
+        
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+        
+        var time = h + ":" + m + ":" + s + " " + session;
+        document.getElementById("MyClockDisplay").innerText = time;
+        document.getElementById("MyClockDisplay").textContent = time;
+
+        var time2 = h + ":" + m + " " + session;
+        document.getElementById("MyClockDisplay2").innerText = time2;
+        document.getElementById("MyClockDisplay2").textContent = time2;
+
+        setTimeout(showTime, 1000);
+      }
+      showTime();
+
+      function myFunction() {
+        var x = document.getElementById("myDIV");
+        var xx = document.getElementById("myDIV2");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          xx.style.display = "none";
+        } else {
+          x.style.display = "none";
+          xx.style.display = "block";
+        }
+      }
+
+    </script>
+    
+    <!-- deploy -->
+    <!-- https://pages.github.com/ -->
+    <!-- 
+      thanks to 
+      Aaron Farrar
+      https://codepen.io/afarrar/pen/JRaEjP
+      and
+      w3schools
+    -->
+  </body>
+</html>
+
