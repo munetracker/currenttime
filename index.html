@@ -19,15 +19,12 @@
     </style>
   </head>
   <body>
-    <div id="myDIV">
-      <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
-    </div>
-
-    <div 
-      style="display: none;"
-      id="myDIV2">
-      <div id="MyClockDisplay2" class="clock" onload="showTime()"></div>
-    </div>
+    <style contenteditable style="display: block; color:white; white-space: pre;">
+      * { transition: all 0.5s }
+        html{
+          background: #111111;
+        }
+    </style>
 
     <h3 
       style="text-align: center;font-size: 15px;font-weight: 600; color: #86f287;">
@@ -38,6 +35,14 @@
     </h3>
 
     <button onclick="myFunction()"> SPS </button>
+    <div id="myDIV">
+      <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    </div>
+    <div 
+      style="display: none;"
+      id="myDIV2">
+      <div id="MyClockDisplay2" class="clock" onload="showTime()"></div>
+    </div>
 
     <script>
       function showTime(){
@@ -109,6 +114,9 @@
       and
       w3schools
     -->
+    <!-- 
+      thanks to wes bos for the style trick
+      https://www.youtube.com/watch?v=D02AK3WoYH8 -->
   </body>
 </html>
 
