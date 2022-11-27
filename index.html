@@ -20,7 +20,9 @@
     </style>
   </head>
   <body>
-    <style contenteditable style="display: block; color:white; white-space: pre;">
+    <style contenteditable 
+      style="display: block; color:white; white-space: pre; 
+            position: fixed; bottom:5%; width:99%;">
       * { transition: all 0.5s }
         html{
           background: #111111;
@@ -35,7 +37,7 @@
       <span id="current_year">Error</span>
     </h3>
 
-    <button onclick="myFunction()"> SPS </button>
+    <button onclick="myFunction()" style="background-color: black;"> SPS </button>
     <div id="myDIV">
       <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
     </div>
