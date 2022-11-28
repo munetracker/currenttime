@@ -20,15 +20,7 @@
     </style>
   </head>
   <body>
-    <style contenteditable 
-      style="display: block; color:white; white-space: pre; 
-            position: fixed; bottom:5%; width:99%;">
-      * { transition: all 0.5s }
-        html{
-          background: #111111;
-        }
-    </style>
-
+    <!-- date -->
     <h3 
       style="text-align: center;font-size: 15px;font-weight: 600; color: #86f287;">
       ( <span id="currentday">Error</span> )
@@ -37,7 +29,11 @@
       <span id="current_year">Error</span>
     </h3>
 
+    <!-- time -->
     <button onclick="myFunction()" style="background-color: black;"> SPS </button>
+    <!-- time -->
+    <button onclick="myFunctioniframe()" style="background-color: black; margin-left: 20;"> iframe </button>
+
     <div id="myDIV">
       <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
     </div>
@@ -46,6 +42,24 @@
       id="myDIV2">
       <div id="MyClockDisplay2" class="clock" onload="showTime()"></div>
     </div>
+
+    <!-- pomo -->
+    <div style="display: none;" id="iframediv">
+      <iframe src="./pomo/index.html" 
+        width="322" height="450"
+        scrolling="no"
+        title="pomo"></iframe>
+    </div>
+
+    <!-- style editable -->
+    <style contenteditable 
+      style="display: block; color:white; white-space: pre; 
+            position: fixed; bottom:5%; width:99%;">
+      * { transition: all 0.5s }
+        html{
+          background: #111111;
+        }
+    </style>
 
     <script>
       function showTime(){
@@ -90,6 +104,11 @@
           x.style.display = "none";
           xx.style.display = "block";
         }
+      }
+
+      function myFunctioniframe() {
+        var iframediv = document.getElementById("iframediv");
+        iframediv.style.display = (iframediv.style.display === "none" ? "block" : "none");
       }
 
 
